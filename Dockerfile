@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y tor && \
 	echo 'MaxCircuitDirtiness 10' >> /etc/tor/torrc && \
 	echo 'DataDirectory /etc/tor/' >> /etc/tor/torrc && \
 	echo 'User debian-tor' >> /etc/tor/torrc && \
+	echo 'SocksPolicy accept *' >> /etc/tor/torrc && \
 	chown debian-tor:debian-tor -R /etc/tor
 
 EXPOSE 9050
